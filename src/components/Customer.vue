@@ -1,6 +1,9 @@
 
 <template>
     <div class=customer>
+        <div class="close-button" v-on:click="close_click" >
+            X
+        </div>
         {{customers[index].name}}
     </div>
 </template>
@@ -22,6 +25,11 @@ export default {
         //     customers: 'customers' // must be in quotes!
         // })
     },
+    methods: {
+        close_click(){
+            this.$store.commit('removeItem', this.index)
+        }
+    }
 }
 </script>
 
@@ -34,6 +42,20 @@ export default {
     text-align: center;
     line-height: 100px;
     margin: 10px;
+    position: relative;
+}
+.close-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin-right: 5px;
+    padding: 5px;
+    line-height: 20px;
+    /* background-color: rebeccapurple; */
+}
+.close-button:hover {
+    color: red;
+    cursor: pointer;
 }
 </style>
 

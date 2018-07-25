@@ -1,11 +1,12 @@
 <template>
   <div id="app">
 
+      <!-- button -->
       <div class="header">
         <button v-on:click="add_customer" class="button is-link" >Add a customer</button>
       </div>
       
-
+      <!-- list of customers -->
       <customer v-for="i in customers.length" v-bind:index="i-1" :key="i" ></customer>
 
       <!-- <div v-for="i in 10" :key="i" >{{i}}</div> -->

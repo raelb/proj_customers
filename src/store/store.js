@@ -12,6 +12,11 @@ const store = {
             {name: 'Alex'},
             {name: 'Joan'},            
         ]
+    },
+    mutations: {
+        removeItem(state, index){
+            state.customers.splice(index, 1);
+        }
     }
 }
 
