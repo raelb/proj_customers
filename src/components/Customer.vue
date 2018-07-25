@@ -1,17 +1,27 @@
 
 <template>
     <div class=customer>
-        {{name}}
+        {{customers[index].name}}
     </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
     data: function(){
         return {
-            name: 'John'
+            
         }
-    }
+    },
+    props: ['index'],
+    computed: {
+        customers: function(){ return this.$store.state.customers },
+
+        // ...mapState({
+        //     customers: 'customers' // must be in quotes!
+        // })
+    },
 }
 </script>
 
@@ -23,6 +33,7 @@ export default {
     background-color: lightpink;
     text-align: center;
     line-height: 100px;
+    margin: 10px;
 }
 </style>
 

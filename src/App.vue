@@ -1,8 +1,12 @@
 <template>
   <div id="app">
 
-      <div v-for="cust in customers">{{cust.name}}</div>
-      <customer></customer>
+      <customer v-for="i in customers.length" v-bind:index="i-1" ></customer>
+
+      <!-- <customer index=0 ></customer>
+      <customer index=1 ></customer>
+      <customer index=2 ></customer>
+      <customer index=3 ></customer> -->
   </div>
 </template>
 
