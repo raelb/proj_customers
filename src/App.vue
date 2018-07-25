@@ -1,6 +1,11 @@
 <template>
   <div id="app">
 
+      <div class="header">
+        <button v-on:click="add_customer" class="button is-link" >Add a customer</button>
+      </div>
+      
+
       <customer v-for="i in customers.length" v-bind:index="i-1" :key="i" ></customer>
 
       <!-- <div v-for="i in 10" :key="i" >{{i}}</div> -->
@@ -31,10 +36,18 @@ export default {
   },
   components: {
     customer
+  },
+  methods: {
+    add_customer(){
+      this.customers.push({name: 'Pete'})
+    }
   }
 }
 </script>
 
 <style>
-
+  .header {
+    margin: 10px;
+    margin-top: 20px;
+  }
 </style>
